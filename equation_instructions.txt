@@ -1,0 +1,9 @@
+
+- Enter an equation only in terms of x.
+- If you want to multiply, use this character: "*"
+- More complex equations involving variables in exponents, fractions,
+logarithmic, exponential, and trig functions are not recognized by this
+program as of date!
+- Fractions and decimals are also not recognized by this program.
+- Your equation should look something like this: x^2 +5x + 6x^4 - 2x - 29
+- If writing equation in brackets to a power, then the stuff inside the brackets needs to be in order from highest power to lowest power.

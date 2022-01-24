@@ -1,3 +1,0 @@
-menu = "1. Calculate problem", "2. Define a term", "3. Translate a term (English to French)"
-for options in menu:
-  print(options)
