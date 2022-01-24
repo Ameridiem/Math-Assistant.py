@@ -3,7 +3,7 @@
 ### Code Instructions
 - Instructions on how to input code are in the menu file
 - Enter any number to do something with the program. Menu will show what each number does (eg. start / enter equation, how to type in an equation without the program crashing, quit the program)
-- The program will calculate the derivative of your function while showing the steps for you.
+- The program will calculate the derivative of the function you typed in while showing the steps for you.
 
 ### Audience
 - This program was built for AP Math students to have a resource for checking over their work that will show all of the appropriate steps.
@@ -20,7 +20,7 @@
 - Bug Fixes / Formatting: Jan. 21st
 - Alpha / Beta Testing: Jan. 24th
 - Review: Before / During Final
-#### Program Expansion:
+### Program Expansion:
 - Different deriavite calculating methods (power-rule / quotient rule, chain rule, etc.)
 - Dealing with more complex equations
     - sin, cos, tan, arcsin, arccos, arctan
@@ -29,6 +29,14 @@
     - equations involving special constants such as pi or e
 
 ### Alpha Testing
+
+#### List
+- Every function in equation_symplifyer.py needs Alpha Testing
+- Menu needs alpha testing to see if printing and function commands work properly
+- Importing simplified function to the chain-rule file needs to be alpha tested to verify that the function is the correct format, data type, and not corrupted
+- diff_eq function needs alpha testing to verify that the function is working properly and returning the correct answer.
+
+### 
 - January 17th, 2022: Code wouldn't execute properly with most formuals.
     - Using two stars for the power causes the system to not recognize coefficients and / or powers properly.
     - Used Regex Module to look for the two stars (\*\*) and replace with carots (^) and adjusted code accordingly.
@@ -48,6 +56,7 @@
 - January 23, 2022: Function 3x^20 - (3 + x^2)^3 raised a ValueError
     - ValueError only raised when it's in that order in the brackets.
     - Added parameter that tells the user to change the order of the function
+    - With more time, it would be ideal to create a new function that could change the order of every part in brackets from highest power to lowest power so the program can work properly with every type of equation it was supposed to.
 
 #### Marin Nelson:
 - January 23, 2022: Program was not clear on how to type equations.

@@ -48,3 +48,8 @@ v1.9:
 v1.10:
 - Created function that multiplies stuff in brackets, as well as repeat patterns inside brackets when raised with an exponenet.
 - common_terms function was returning an empty string, created a new function that will handle what it's supposed to do.
+
+v1.11:
+- Added comments for blocks of code that belong together
+- Corrected PEP8 errors
+- Beta testing and updated program accordingly.

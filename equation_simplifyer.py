@@ -1,5 +1,12 @@
+# Catherine McLellan
+# Equation simplifyer
+# Computer Science 30
+# January 24, 2022
+
 import re
 import time
+
+# Defining variables for functions
 new_function = ""
 function_parts = []
 symbol_reset = True
@@ -11,6 +18,7 @@ formula_terms = {}
 
 
 class Terms:
+    # Class for every part of a term to create a list of terms
     def __init__(self, name):
         self.name = name
         self.pos_or_neg = pos_or_neg
@@ -19,6 +27,7 @@ class Terms:
 
 
 def split_function(formula):
+    # Splitting the function if it has brackets
     formula = re.split("\(|\)", formula)
     for parts in formula:
         if parts == "":
@@ -27,6 +36,8 @@ def split_function(formula):
 
 
 def bracket_powers(formula):
+    # Repeats the amount of times stuff inside brackets are
+    # raised to a power.
     counter = 0
     for parts in formula:
         if re.match("\^\d", parts):
@@ -42,6 +53,8 @@ def bracket_powers(formula):
 
 
 def multiply_terms(last_term, current_term):
+    # Creates a new string of all multiplied terms in the
+    # function (essentially foiling it out.)
     results = []
     for left_parts in last_term:
         for right_parts in current_term:
@@ -50,6 +63,7 @@ def multiply_terms(last_term, current_term):
 
 
 def resolve_pos_neg(term):
+    # Determines whether the sign is positive or negative
     sign = "-"
     neg = term.count("-")
     if neg % 2 == 0:
@@ -60,6 +74,9 @@ def resolve_pos_neg(term):
 
 
 def foil_out_function(function):
+    # All of the previous functions put together so this
+    # function could be called later without as many
+    # repititions of code.
     function_parts = []
     function = split_function(function)
     function = bracket_powers(function)
@@ -85,6 +102,9 @@ def foil_out_function(function):
 
 
 def simplify_powers(formula, variable):
+    # Function that takes the foiled out equation and adds
+    # powers based on how many times the variable is
+    # multiplied by itself
     counter2 = 0
     pos_or_neg = "+"
     symbol_reset = True
@@ -145,6 +165,8 @@ def simplify_powers(formula, variable):
 
 
 def separate_terms(formula):
+    # Replaces ** with ^ to make more readable and creates
+    # a new function list that has the terms separated.
     formula = re.sub("\*\*", "^", formula)
     formula = formula.replace(" ", "")
     formula = formula.replace("+", " + ")
@@ -154,6 +176,8 @@ def separate_terms(formula):
 
 
 def append_to_function(function_terms, function):
+    # Creates a new function from the key values of the
+    # dictionary.
     for terms in function_terms:
         counter = 0
         if (function_terms[terms][0][2] == "0" or
@@ -176,6 +200,7 @@ def append_to_function(function_terms, function):
 
 
 def powers_of_one(variable, function):
+    # Finds and gets rid of **1
     function = function.split(" ")
     counter = 0
     newer_function = ""
@@ -187,6 +212,7 @@ def powers_of_one(variable, function):
 
 
 def powers_of_zero(variable, function):
+    # Finds and gets rid of **0
     function = function.split(" ")
     counter = 0
     newer_function = ""
@@ -198,12 +224,16 @@ def powers_of_zero(variable, function):
 
 
 def times_one(function):
+    # Finds and gets rid of *1
     function = re.sub("(?<=\D)[1](?=[xh])", "", function)
     function = re.sub("\*[1]\s|$(?=\D)", " ", function)
     return function
 
 
 def common_terms(function):
+    # Creates a new dictionary that organizes each term by
+    # their powers, then evaluates terms that are raised to
+    # the same power.
     function = function.replace("+", " +")
     function = function.replace("-", " -")
     function = function.split(" ")
@@ -240,6 +270,8 @@ def common_terms(function):
 
 
 def simplify_function(function):
+    # Function that includes all of the previous functions on
+    # this page to make importing simpler
     function = foil_out_function(function)
     function_terms = separate_terms(function)
     formula_terms = simplify_powers(function_terms, "x")

@@ -2,12 +2,15 @@
 # Computer Science 30
 # January 24, 2022
 
+# Importing modules and files needed to calculate the derivative
 import equation_simplifyer
 import re
 import time
 
 
 def diff_eq():
+    # Takes in a function typed out by the user and calculates
+    # it's derivative with help from functions from other files
     user_function = input("""Type your function.
 f(x) = """)
     function = equation_simplifyer.simplify_function(user_function)
@@ -56,6 +59,8 @@ f(x) = """)
 
 
 def simplify_derivative():
+    # Simplifies extra **0 or **1 and cleans up function to
+    # make it readable for the user.
     derivative = diff_eq()
     derivative = equation_simplifyer.powers_of_one("x", derivative)
     derivative = equation_simplifyer.powers_of_zero("x", derivative)
