@@ -10,16 +10,16 @@
 - There aren't many programs out there that will do this, so it takes a long time to find mistakes.
 - Showing the steps will help students look over their work and to not ponder over what their mistake was for hours.
 
-### Timeline
+### Timeline and Program Requirements
 - Menu: Nov. 25th
-- Simplify simple terms (add/substract): Dec. 15th
-- Simplify powers: Jan. 3rd
-- Clean up function: Jan. 12th
-- Simplify brackets: Jan. 16th
-- Definition of Derivative method: Jan. 20th
+- Function that simplifies common terms: Dec. 15th
+- Function that simplifies powers: Jan. 3rd
+- Defined function to clean up user-function: Jan. 12th
+- Function to simplify brackets: Jan. 16th
+- File for at least one derivative calc method: Jan. 20th
 - Bug Fixes / Formatting: Jan. 21st
-- Alpha / Beta Testing: Jan. 24th
-- Review: Before / During Final
+- Alpha / Beta Testing: Jan. 23rd
+- Review: Jan. 23rd
 ### Program Expansion:
 - Different deriavite calculating methods (power-rule / quotient rule, chain rule, etc.)
 - Dealing with more complex equations
